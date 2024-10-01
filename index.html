@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="shortcut icon" type="x-icon" href="https://as1.ftcdn.net/v2/jpg/02/19/74/48/1000_F_219744890_JLs638fW6WZM2RnBR5E4kfXQNd5LfaGp.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferências Científicas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    
+</head>
+<body>
+    <header>
+        <section id="titulo"><h1>Sistema de Gestão de Conferências Científicas</h1></section>
+              
+            
+    </header>
+    
+    <main>
+        
+        <h3>Listagem de Conferências</h3>
+        {% for conferencia in conferencia_list %}
+        <a href="{{ url_for('conferencia', id=conferencia.get_id()) }}"><h3>{{ conferencia.get_name() }}</h3></a>
+        <p> {{ conferencia.get_data() }}</p>
+        <p> {{ conferencia.get_local() }}</p>
+        <p> {{ conferencia.get_description() }}</p>
+
+        {% endfor %}
+        
+        
+    </main>
+    <footer>
+        <section id="contato">
+            <h5><p>Contato: jiiyeonk3@gmail.com</p></h5>
+            <h5><p>Github: <a href="https://github.com/nathanjordanp" target="_blank">https://github.com/nathanjordanp</a></p></h5>
+            <h5><p>&copy; 2024 Sistema de Gestão de Conferências Científicas</p></h5>
+        </section>
+    </footer>
+</body>
+</html>
